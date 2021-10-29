@@ -9,6 +9,7 @@
       Title="Tourspage">
 
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="135"/>
             <RowDefinition/>
@@ -29,8 +30,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
-                    <Grid Margin="1">
+                
+                <Grid Margin="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="5.5*"/>
@@ -44,7 +45,7 @@
                         <TextBlock Text="Наименование тура" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Grid.ColumnSpan="2"></Image>
                         <TextBlock Grid.Row="2" Text="10.000 РУБ" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Center"/>
-                        <TextBlock Grid.Row="3" Text="Актуален" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Left"  Foreground="Green"/>
+                        <TextBlock Grid.Row="3" Text="Актуален" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Left"  Foreground="Green" Margin="5"/>
                         <TextBlock Grid.Row="3" Grid.Column="1" Text="Билетов: 47" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Right"/>
                     </Grid>
 
