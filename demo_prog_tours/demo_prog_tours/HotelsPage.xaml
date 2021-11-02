@@ -1,0 +1,52 @@
+﻿<Page x:Class="TravelInRussia.HotelsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TravelInRussia"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HotelsPage" FontFamily="Comic Sans MS"
+      IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Page.Resources>
+    <Style TargetType="TextBlock">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="MaxHeight" Value="20"></Setter>
+    </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel HorizontalAlignment="Center">
+            <Button x:Name="BtnFirstPage" Content="&lt;&lt;" Width="20" Height="20" Click="BtnFirstPage_Click"></Button>
+            <Button x:Name="BtnPrevPage" Content="&lt;" Width="20" Height="20" Click="BtnPrevPage_Click"></Button>
+            <TextBlock x:Name="TextCurrentPage"></TextBlock>
+            <Button x:Name="BtnNextPage" Content="&gt;" Width="20" Height="20" Click="BtnNextPage_Click"></Button>
+            <Button x:Name="BtnLastPage" Content="&gt;&gt;" Width="20" Height="20" Click="BtnLastPage_Click"></Button>
+            <TextBlock x:Name="TextPageTotal"></TextBlock>
+            <TextBlock x:Name="TextStringTotal"></TextBlock>
+            <Button x:Name="BtnDeleteHotel" Content="Удалить" Click="BtnDeleteHotel_Click"></Button>
+        </WrapPanel>
+
+        <DataGrid x:Name="DGridHotels" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название отеля" Binding="{Binding Name}" Width="*" />
+                <DataGridHyperlinkColumn Header="Количество звезд" Binding="{Binding CountOfStars}" Width="150" />
+                <DataGridTextColumn Header="Страна" Binding="{Binding Country.Name}" MinWidth="250" />
+                <DataGridTextColumn Header="Количество туров" Binding="{Binding }" MinWidth="250" />
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" x:Name="BtnEdit" Click="BtnEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
